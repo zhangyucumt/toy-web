@@ -17,10 +17,9 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "这是创建用户")
 }
 
-func order(w http.ResponseWriter, r *http.Request)  {
+func order(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "这是订单")
 }
-
 
 func main() {
 	http.HandleFunc("/", home)
@@ -37,4 +36,14 @@ type Server interface {
 
 type sdkHttpServer struct {
 	Name string
+}
+
+func (s *sdkHttpServer) Route(pattern string, handlerFunc http.HandlerFunc) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (s *sdkHttpServer) Start(address string) error {
+	//TODO implement me
+	panic("implement me")
 }
